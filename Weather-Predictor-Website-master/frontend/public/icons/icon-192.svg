@@ -1,0 +1,138 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Deep glass mesh background, richer than v1 -->
+    <radialGradient id="bgCore" cx="32%" cy="24%" r="90%">
+      <stop offset="0%" stop-color="#4a5a78"/>
+      <stop offset="35%" stop-color="#2a3448"/>
+      <stop offset="70%" stop-color="#151c2b"/>
+      <stop offset="100%" stop-color="#080b12"/>
+    </radialGradient>
+
+    <radialGradient id="bgVignette" cx="50%" cy="80%" r="70%">
+      <stop offset="0%" stop-color="#000000" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Champagne-gold metallic ring, the premium signal -->
+    <linearGradient id="goldRing" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f7e7c1"/>
+      <stop offset="22%" stop-color="#d9b56b"/>
+      <stop offset="50%" stop-color="#8a6a37"/>
+      <stop offset="78%" stop-color="#e8cd8f"/>
+      <stop offset="100%" stop-color="#b5904c"/>
+    </linearGradient>
+
+    <linearGradient id="goldThin" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f7e7c1" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#b5904c" stop-opacity="0.5"/>
+    </linearGradient>
+
+    <linearGradient id="glassSheen" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.14"/>
+      <stop offset="55%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+
+    <linearGradient id="cloudPremium" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#d7dee8"/>
+    </linearGradient>
+
+    <linearGradient id="sunPremium" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fff2cf"/>
+      <stop offset="60%" stop-color="#f0c266"/>
+      <stop offset="100%" stop-color="#d9a441"/>
+    </linearGradient>
+
+    <linearGradient id="dropPremium" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#cfe8ff"/>
+      <stop offset="100%" stop-color="#6fa9d8"/>
+    </linearGradient>
+
+    <filter id="badgeShadow" x="-60%" y="-60%" width="220%" height="220%">
+      <feDropShadow dx="0" dy="10" stdDeviation="16" flood-color="#000000" flood-opacity="0.55"/>
+    </filter>
+
+    <filter id="sunGlowPremium" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="9" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="innerGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="3"/>
+    </filter>
+
+    <clipPath id="clipCore">
+      <circle cx="256" cy="256" r="214"/>
+    </clipPath>
+  </defs>
+
+  <!-- Outer soft aura -->
+  <circle cx="256" cy="256" r="248" fill="url(#bgCore)" opacity="0.18"/>
+
+  <!-- Gold outer ring -->
+  <g filter="url(#badgeShadow)">
+    <circle cx="256" cy="256" r="228" fill="none" stroke="url(#goldRing)" stroke-width="6"/>
+  </g>
+
+  <!-- Thin secondary gold hairline for jewelry-like precision -->
+  <circle cx="256" cy="256" r="218" fill="none" stroke="url(#goldThin)" stroke-width="1.25" opacity="0.8"/>
+
+  <!-- Glass core -->
+  <circle cx="256" cy="256" r="214" fill="url(#bgCore)"/>
+
+  <g clip-path="url(#clipCore)">
+    <!-- vignette for depth -->
+    <rect x="42" y="42" width="428" height="428" fill="url(#bgVignette)"/>
+
+    <!-- glass sheen top -->
+    <ellipse cx="200" cy="120" rx="200" ry="100" fill="url(#glassSheen)"/>
+
+    <!-- faint concentric arcs, evoking a barometric / radar motif for extra craft -->
+    <circle cx="256" cy="256" r="150" fill="none" stroke="#ffffff" stroke-opacity="0.05" stroke-width="1"/>
+    <circle cx="256" cy="256" r="115" fill="none" stroke="#ffffff" stroke-opacity="0.04" stroke-width="1"/>
+
+    <!-- Sun -->
+    <circle cx="298" cy="178" r="46" fill="url(#sunPremium)" filter="url(#sunGlowPremium)"/>
+    <!-- fine sun rays, minimal, elegant -->
+    <g stroke="#f0c266" stroke-width="2.5" stroke-linecap="round" opacity="0.55">
+      <line x1="298" y1="108" x2="298" y2="122"/>
+      <line x1="356" y1="136" x2="346" y2="146"/>
+      <line x1="368" y1="178" x2="354" y2="178"/>
+    </g>
+
+    <!-- Cloud, single refined silhouette with thin gold underline accent -->
+    <path d="M138 296
+             c-32 0 -58 -24 -58 -54
+             c0 -28 21 -51 49 -54
+             c5 -37 38 -65 77 -65
+             c39 0 71 28 77 65
+             c30 2 54 26 54 55
+             c0 30 -26 53 -58 53
+             Z"
+          fill="url(#cloudPremium)"/>
+    <path d="M138 296
+             c-32 0 -58 -24 -58 -54
+             c0 -28 21 -51 49 -54
+             c5 -37 38 -65 77 -65
+             c39 0 71 28 77 65
+             c30 2 54 26 54 55
+             c0 30 -26 53 -58 53
+             Z"
+          fill="none" stroke="#b5904c" stroke-opacity="0.25" stroke-width="1.5"/>
+
+    <!-- Refined drizzle, tapered gold-blue drops -->
+    <g fill="url(#dropPremium)" opacity="0.95">
+      <path d="M172 318 q7 16 0 26 q-7 -10 0 -26 Z"/>
+      <path d="M212 318 q7 16 0 26 q-7 -10 0 -26 Z"/>
+      <path d="M252 318 q7 16 0 26 q-7 -10 0 -26 Z"/>
+      <path d="M192 352 q7 16 0 26 q-7 -10 0 -26 Z"/>
+      <path d="M232 352 q7 16 0 26 q-7 -10 0 -26 Z"/>
+    </g>
+  </g>
+
+  <!-- Crisp inner rim, jewelry-grade edge -->
+  <circle cx="256" cy="256" r="214" fill="none" stroke="#ffffff" stroke-opacity="0.15" stroke-width="1"/>
+</svg>
